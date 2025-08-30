@@ -1,0 +1,18 @@
+/*
+  The following Tailwind directives require Tailwind CSS and PostCSS processing.
+  Make sure your build tool (like webpack, Vite, or CRA) is configured with Tailwind CSS.
+*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  body {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
