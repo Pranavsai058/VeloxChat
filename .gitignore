@@ -1,0 +1,15 @@
+# 🔒 Don't track environment variables
+.env
+
+# 🧱 Node dependencies
+node_modules/
+
+# 🗑️ Logs
+*.log
+
+# ⚙️ Build files
+dist/
+build/
+
+# 🖼️ Uploaded media
+uploads/
