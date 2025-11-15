@@ -1,6 +1,2 @@
-const BASE_URL =
-  window.location.hostname === "localhost"
-    ? "http://localhost:5050"
-    : "";
-
+const BASE_URL = "https://veloxchat.onrender.com";
 export default BASE_URL;

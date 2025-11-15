@@ -27,6 +27,9 @@ app.use("/api/user",userRouter)
 app.use("/api/message",messageRouter)
 
 
+app.get("/", (req, res) => {
+    res.status(200).send("VeloxChat backend running");
+});
 
 server.listen(port,()=>{
     connectDb()

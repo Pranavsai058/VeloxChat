@@ -12,6 +12,7 @@ import ReceiverMessage from './ReceiverMessage';
 import axios from 'axios';
 import { serverUrl } from '../main';
 import { setMessages } from '../redux/messageSlice';
+import BASE_URL from '../api';
 function MessageArea() {
   let {selectedUser,userData,socket}=useSelector(state=>state.user)
   let dispatch=useDispatch()
@@ -37,7 +38,7 @@ const handleSendMessage=async (e)=>{
     if(backendImage){
       formData.append("image",backendImage)
     }
-    let result=await axios.post(`${serverUrl}/api/message/send/${selectedUser._id}`,formData,{withCredentials:true})
+    let result=await axios.post(`${BASE_URL}/api/message/send/${selectedUser._id}`,formData,{withCredentials:true})
     dispatch(setMessages([...messages,result.data]))
     setInput("")
     setFrontendImage(null)

@@ -10,7 +10,7 @@ import getOtherUsers from './customHooks/getOtherUsers'
 import {io} from "socket.io-client"
 import { serverUrl } from './main'
 import { setOnlineUsers, setSocket } from './redux/userSlice'
-
+import BASE_URL from './api';
 function App() {
   getCurrentUser()
   getOtherUsers()

@@ -8,6 +8,7 @@ import { serverUrl } from '../main';
 import axios from 'axios';
 import { setOtherUsers, setSearchData, setSelectedUser, setUserData } from '../redux/userSlice';
 import { useNavigate } from 'react-router-dom';
+import BASE_URL from '../api';
 function SideBar() {
     let {userData,otherUsers,selectedUser,onlineUsers,searchData} = useSelector(state=>state.user)
     let [search,setSearch]=useState(false)
@@ -16,7 +17,7 @@ let dispatch=useDispatch()
 let navigate=useNavigate()
     const handleLogOut=async ()=>{
         try {
-            let result =await axios.get(`${serverUrl}/api/auth/logout`,{withCredentials:true})
+            let result =await axios.get(`${BASE_URL}/api/auth/logout`,{withCredentials:true})
 dispatch(setUserData(null))
 dispatch(setOtherUsers([]))
 navigate("/login")
@@ -27,7 +28,7 @@ navigate("/login")
 
     const handlesearch=async ()=>{
         try {
-            let result =await axios.get(`${serverUrl}/api/user/search?query=${input}`,{withCredentials:true})
+            let result =await axios.get(`${BASE_URL}/api/user/search?query=${input}`,{withCredentials:true})
             dispatch(setSearchData(result.data))
            
         }

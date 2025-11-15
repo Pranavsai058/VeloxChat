@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { serverUrl } from '../main'
 import { useDispatch, useSelector } from 'react-redux'
 import { setUserData } from '../redux/userSlice'
-
+import BASE_URL from '../api';
 function SignUp() {
     let navigate=useNavigate()
     let [show,setShow]=useState(false)
@@ -19,7 +19,7 @@ let dispatch=useDispatch()
         e.preventDefault()
         setLoading(true)
         try {
-            let result =await axios.post(`${serverUrl}/api/auth/signup`,{
+            let result =await axios.post(`${BASE_URL}/api/auth/signup`,{
 userName,email,password
             },{withCredentials:true})
            dispatch(setUserData(result.data))

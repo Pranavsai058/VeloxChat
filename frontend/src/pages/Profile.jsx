@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { serverUrl } from '../main';
 import { setUserData } from '../redux/userSlice';
-
+import BASE_URL from '../api';
 function Profile() {
     let {userData}=useSelector(state=>state.user)
     let dispatch=useDispatch()
@@ -36,7 +36,7 @@ const handleProfile = async (e) => {
 
     const token = localStorage.getItem("token"); // ✅ get token
 
-    let result = await axios.put(`${serverUrl}/api/user/profile`, formData, {
+    let result = await axios.put(`${BASE_URL}/api/user/profile`, formData, {
      withCredentials: true
     });
 

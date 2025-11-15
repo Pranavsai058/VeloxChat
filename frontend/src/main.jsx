@@ -5,8 +5,9 @@ import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import {Provider} from "react-redux"
 import { store } from './redux/store.js'
+import BASE_URL from './api.js';
 
-export const serverUrl = import.meta.env.VITE_API_URL;
+export const serverUrl =   BASE_URL;
 
 createRoot(document.getElementById('root')).render(
 <BrowserRouter>
