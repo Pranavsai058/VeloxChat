@@ -15,7 +15,7 @@ const port=process.env.PORT || 5000
 app.use(cors({
   origin: [
     "http://localhost:5173", // for local development
-    "https://blink-talk-chat-app.vercel.app" // deployed frontend
+    "https://veloxchat.onrender.com"
   ],
   credentials: true
 }));
